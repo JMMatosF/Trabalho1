@@ -3,4 +3,8 @@
     <string name="take_photo">Take Photo</string>
     <string name="textview">TextView</string>
     <string name="activity2">activity2</string>
+    <string name="login">Login</string>
+    <string name="signin">Sign In</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
 </resources>

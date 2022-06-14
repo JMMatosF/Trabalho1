@@ -11,11 +11,21 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="107dp"
         android:text="@string/take_photo"
         android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"/>
+        tools:visibility="visible" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="@string/login"
+        tools:ignore="RelativeOverlap" />
 
     <TextView
         android:id="@+id/textView"
