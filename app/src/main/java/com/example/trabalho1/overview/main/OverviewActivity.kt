@@ -1,4 +1,4 @@
-package com.example.trabalho1.overview
+package com.example.trabalho1.overview.main
 
 import android.os.Bundle
 import android.widget.Toast
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.trabalho1.databinding.ActivityOverviewBinding
 import com.example.trabalho1.overview.database.BookEntity
 import com.example.trabalho1.overview.database.OverviewAdapter
+import com.example.trabalho1.overview.dialog.OverviewAddDialog
 
 class OverviewActivity : AppCompatActivity() {
 
@@ -32,10 +33,19 @@ class OverviewActivity : AppCompatActivity() {
 
     private fun initViews() {
         binding.fab.setOnClickListener {
-            viewModel.insertBook((BookEntity("Eng", "Inf")))
+            initDialog()
         }
         binding.list.adapter = mAdapter
         viewModel.getAllBooks()
+    }
+
+    private fun initDialog() {
+        OverviewAddDialog.Builder(supportFragmentManager)
+            .onClickListener {
+                viewModel.insertBook(it)
+            }
+            .show()
+
     }
 
     private fun initObservers() {

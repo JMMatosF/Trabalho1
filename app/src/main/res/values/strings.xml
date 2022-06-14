@@ -16,6 +16,9 @@
     <string name="books_list_fail">we will come here later</string>
     <string name="autor">Autor</string>
     <string name="livro">Nome do livro</string>
+    <string name="add_book">Add Book</string>
+    <string name="book_name">Book Name</string>
+    <string name="author_name">Author Name</string>
 
 
 </resources>

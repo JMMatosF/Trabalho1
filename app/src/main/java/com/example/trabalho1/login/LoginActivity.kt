@@ -2,18 +2,11 @@ package com.example.trabalho1.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
-import com.google.android.material.textfield.TextInputEditText
-import com.example.trabalho1.main.MainActivity
-import com.example.trabalho1.R
 import com.example.trabalho1.databinding.ActivityLoginBinding
-import com.example.trabalho1.databinding.ActivityMainBinding
-import com.example.trabalho1.overview.OverviewActivity
+import com.example.trabalho1.overview.main.OverviewActivity
 
 class LoginActivity : AppCompatActivity() {
 
