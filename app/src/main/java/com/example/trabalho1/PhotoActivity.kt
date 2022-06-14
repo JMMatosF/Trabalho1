@@ -28,6 +28,7 @@ class PhotoActivity : AppCompatActivity() {
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(cameraIntent, REQUEST_CODE)
         }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -36,5 +37,4 @@ class PhotoActivity : AppCompatActivity() {
             camara.setImageBitmap(data.extras!!.get("data") as Bitmap)
         }
     }
-
 }

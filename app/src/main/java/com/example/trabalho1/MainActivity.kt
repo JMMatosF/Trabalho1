@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
         val buttonPhoto = findViewById<Button>(R.id.button)
 
@@ -19,6 +19,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PhotoActivity :: class.java)
             startActivity(intent)
         }
+        val login = findViewById<Button>(R.id.loginbtn)
+        login.setOnClickListener(){
+            val intent = Intent(this, LoginActivity:: class.java)
+            startActivity(intent)
+        }
+
 
     }
 }
