@@ -9,4 +9,13 @@
     <string name="password">Password</string>
     <string name="loginbtn">LogIn</string>
     <string name="erro">Tente Novamente</string>
+    <string name="username_error">Username is Invalid</string>
+    <string name="password_error">Password is Invalid</string>
+    <string name="books_list_error">Failed To fetch books</string>
+    <string name="books_list_empty">There are no books to present</string>
+    <string name="books_list_fail">we will come here later</string>
+    <string name="autor">Autor</string>
+    <string name="livro">Nome do livro</string>
+
+
 </resources>

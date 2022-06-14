@@ -13,17 +13,22 @@
             android:name=".PhotoActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
-
-        <activity android:name=".LoginActivity"
+            android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+        <activity android:name=".login.LoginActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity android:name=".overview.OverviewActivity"
+            android:exported="true">
+
         </activity>
 
     </application>
