@@ -19,6 +19,7 @@
     <string name="add_book">Add Book</string>
     <string name="book_name">Book Name</string>
     <string name="author_name">Author Name</string>
+    <string name="title_activity_compose">ComposeActivity</string>
 
 
 </resources>
