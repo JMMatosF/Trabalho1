@@ -8,4 +8,5 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="loginbtn">LogIn</string>
+    <string name="erro">Tente Novamente</string>
 </resources>

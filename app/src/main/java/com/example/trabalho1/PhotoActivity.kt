@@ -26,7 +26,7 @@ class PhotoActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(cameraIntent, REQUEST_CODE)
+            //startActivity(cameraIntent, REQUEST_CODE)
         }
 
     }

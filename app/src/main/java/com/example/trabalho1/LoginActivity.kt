@@ -7,10 +7,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
 
 class LoginActivity : AppCompatActivity() {
+
+        private  val viewModel: LoginViewModel by viewModels()
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
@@ -22,36 +26,40 @@ class LoginActivity : AppCompatActivity() {
 
         private fun setup(){
             findViewById<Button>(R.id.loginbtn).setOnClickListener {
-                validateCredentialsAndRedirect()
-            }
-        }
 
-        private fun validateCredentialsAndRedirect(){
-            if (valido()) {
+            }
+
+            viewModel.loginResultLiveData.observe(this){
+                loginResult ->
+                if (loginResult){
+                    findViewById<TextView>(R.id.textView).text = getString(R.string.erro)
+                }
+                else{
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 Toast.makeText(this@LoginActivity, "Bem-vindo", Toast.LENGTH_SHORT).show()
                 // getIntent = startActivity( );
                 finish()
+
             }
         }
 
-        private fun valido(): Boolean {
-            val username = findViewById<EditText>(R.id.username).text.toString()
-            if (username.isEmpty()){
-                Toast.makeText(this@LoginActivity, "Tente novamente", Toast.LENGTH_SHORT).show()
-                return false
-            }
-            val password = findViewById<EditText>(R.id.password).text.toString()
-            if (password.isEmpty()){
-                Toast.makeText(this@LoginActivity, "Tente novamente", Toast.LENGTH_SHORT).show()
-                return false
+               fun validateCredentialsAndRedirect(){
+                val username = findViewById<EditText>(R.id.username).text.toString()
+                if (username.isEmpty()){
+                    Toast.makeText(this@LoginActivity, "Tente novamente", Toast.LENGTH_SHORT).show()
+                    return
+                }
+                val password = findViewById<EditText>(R.id.password).text.toString()
+                if (password.isEmpty()){
+                    Toast.makeText(this@LoginActivity, "Tente novamente", Toast.LENGTH_SHORT).show()
+                    return
+                }
+
+                viewModel.valido(username,password)
+
             }
 
-            val isValid = username == password
-            if (!isValid){
-                Toast.makeText(this@LoginActivity, "Tente novamente", Toast.LENGTH_SHORT).show()
-            }
-            return isValid
+
         }
 }
