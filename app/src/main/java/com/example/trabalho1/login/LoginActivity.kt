@@ -28,12 +28,11 @@ class LoginActivity : AppCompatActivity() {
 
         initViews()
         initObservers()
+        auth = Firebase.auth
 
     }
     public override fun onStart() {
         super.onStart()
-        auth = Firebase.auth
-
         val currentUser = auth.currentUser
         updateUI(currentUser)
 
